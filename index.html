@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,21 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <link rel="shortcut icon" href="assets/images/letter.jpg">
+    <embed id="audio" src="assets/audio/Music.mp3" width="180" height="90" loop="false" autostart="false" hidden="true" />
+    
 </head>
 
 <body>
     <header>
+        <!-- The title fo the page -->
         <h1> The Psychic Game</h1>
     </header>
-    <div>
-        <p>Guess what letter I'm thinking of</p>
-
-        <p id="wins-text"></p>
-        <p id="losses-text"></p>
-        <p id="guesses-text"></p>
-        <p id="yourguess-text"></p>
+    <div class="container">
+        <p class="game">Guess what letter I'm thinking of!</p>
+        <!-- This is where we will have the win counter in HTML. It shows 0  -->
+        <p class="game"> Wins:<span id="wins-text">0</span></p>
+        <!-- This is where we will have the loss counter in HTML. It shows 0 -->
+        <p class="game"> Losses:<span id="losses-text">0</span></p>
+        <!-- This is where we will post the guessesLeft.Nothing is shown. -->
+        <p class="game"> Guesses left: <span id="guesses-text"></span></p>
+        <!-- This is where we will post the guessesSoFar. Nothing is shown. -->
+        <p class="game"> Your Guesses so far: <span id="yourguess-text"></span></p>
     </div>
+    <!-- Here is our JavaScript -->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
