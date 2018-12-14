@@ -11,25 +11,26 @@ var yourguess = [];
 // This variable will be randomly assigned one of the three letters
 var compGuess = null;
 
-var audio = null;
+var audio = document.getElementById("myAudio");
 
-function audio1() {
-    document.getElementById("#audio").innerHTML = audio;
+function playAudio () {
+    audio.play();
 }
+
 // function that updates the gues to the browser.
-function updateguess() {
+function updateGuess() {
     document.querySelector("#guesses-text").innerHTML = guesses;
 };
 
 // function update letter to guess. 
-function updatelattertoguess() {
+function updateLattertoGuess() {
     compGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
     console.log(compGuess);
 };
 
 
 // update guesses so far.
-function updateyourguess() {
+function updateYourGuess() {
     document.querySelector("#yourguess-text").innerHTML = yourguess.join(", ");
 };
 
@@ -37,15 +38,15 @@ function updateyourguess() {
 function reset() {
     guesses = 9; 
     yourguess = [];
-    updatelattertoguess();
-    updateguess();
-    updateyourguess();
+    updateLattertoGuess();
+    updateGuess();
+    updateYourGuess();
 
 }
 
 // initialazing on document load. guess remaining and letter guess.
-updatelattertoguess();
-updateguess();
+updateLattertoGuess();
+updateGuess();
 
 
 // when the user click the keyboard initialize the game.
@@ -57,8 +58,8 @@ document.onkeyup = function (event) {
     // adding the userguess to the array.
     yourguess.push(letter);
 
-    updateguess();
-    updateyourguess();
+    updateGuess();
+    updateYourGuess();
 
 
     
@@ -67,7 +68,6 @@ document.onkeyup = function (event) {
         wins++;
         // When user wins it pops up.
         alert("Good Job!");
-        audio.stop();
         document.querySelector("#wins-text").innerHTML = wins;
         // Then we will reset the game.
         reset();

@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="shortcut icon" href="assets/images/letter.jpg">
-    <embed id="audio" src="assets/audio/Music.mp3" width="180" height="90" loop="false" autostart="false" hidden="true" />
-    
+
+
 </head>
 
 <body>
@@ -29,6 +29,9 @@
         <!-- This is where we will post the guessesSoFar. Nothing is shown. -->
         <p class="game"> Your Guesses so far: <span id="yourguess-text"></span></p>
     </div>
+    <audio id="myAudio">
+        <source src="assets/audio/Music.mp3">
+    </audio>
     <!-- Here is our JavaScript -->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
