@@ -25,7 +25,6 @@ function updateGuess() {
 // function update letter to guess. 
 function updateLattertoGuess() {
     compGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-    console.log(compGuess);
 };
 
 
@@ -66,6 +65,7 @@ document.onkeyup = function (event) {
     if (letter === compGuess) {
         // If there is then we win and we'll update the HTML to display the win.
         wins++;
+        playAudio();
         // When user wins it pops up.
         alert("Good Job!");
         document.querySelector("#wins-text").innerHTML = wins;
